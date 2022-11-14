@@ -11,10 +11,10 @@ from .views import user_profile_view
 app_name = 'accounts'
 
 urlpatterns = [
-    path('register/activate/<str:sign>/', user_activate, name='register_activate'),
-    path('register/done/',
+    path('registration/activate/<str:sign>/', user_activate, name='register_activate'),
+    path('registration/done/',
          TemplateView.as_view(template_name='accounts/user_register_done.html'), name='register_done'),
-    path('register/', UserRegisterView.as_view(), name='register'),
+    path('registration/', UserRegisterView.as_view(), name='registration'),
     path('login/', UserLoginView.as_view(), name='login'),
     path('logout/', UserLogoutView.as_view(), name='logout'),
     path('profile/', user_profile_view, name='profile'),
